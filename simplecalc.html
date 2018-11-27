@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A simple calculator</title>
+	<script type="text/javascript">
+
+		var ran1; 
+		var ran2;
+		var num3;
+		var stat;
+
+	function CheckAnswer()
+	{
+		stat = document.getElementById("ans");
+
+		var sum = parseInt(num1.value) + parseInt(num2.value);
+		num3 = document.getElementById("myans");
+
+		if(sum == num3.value)
+		{
+			stat.innerHTML = "Yes! "+num3.value;
+		}
+		else
+		{
+			stat.innerHTML = "No! "+num3.value;
+		}
+
+	}
+
+
+	function RandomiseOptions()
+	{
+		num1 = document.getElementById("num1");
+		num2 = document.getElementById("num2");
+		ran1 = Math.floor((Math.random()*10)+1);
+		ran2 = Math.floor((Math.random()*10)+1);
+		num1.value = ran1;
+		num2.value = ran2;
+	}
+	</script>
+</head>
+<body>
+	<h3>Enter a value for the calculation</h3>
+	<form action="" >
+		<table width="20%">
+			<tr>
+				<td>Number 1:</td>
+				<td><input id="num1" type="text"/></td>
+			</tr>
+			<tr>
+				<td>Number 2:</td>
+				<td><input id="num2" type="text"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input id="randbtn" type="button" value="Randomise" onclick="RandomiseOptions()"/>
+					<input id="resetbtn" type="reset" value="Reset"/>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input id="myans" type="text" /></td>
+			</tr>
+			<tr>
+				<td>
+					<input id="checkbtn" type="button" value="Check Answer" onclick="CheckAnswer()"/>
+				</td>
+			</tr>
+		</table>
+		<div id="ans">The answer is here</div>
+	</form>
+	
+</body>
+
+</html>
